@@ -20,9 +20,11 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Artillery test
-      run: npx artillery run artillery-config.yml
+      run: npx artillery run artillery/artillery-config.yml --output report.json
+    - name: Generate Artillery html report
+      run: npx artillery report --output artillery-report/report.html report.json
     - name: Upload Artillery report
       uses: actions/upload-artifact@v4
       with:
         name: artillery-report
-        path: artillery-report/
+        path: artillery-report/report.html
