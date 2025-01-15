@@ -10,7 +10,6 @@ test.describe('Login Tests', () => {
         // TODO: Add the email and password to the environment variables
         
         // Login with valid credentials
-        // await loginPage.login('fe.testing+147@proposify.com','ufh_jkc3ktw1QTN3ajh');
         await loginPage.login(process.env.email ?? '', process.env.password ?? '');
         
         // Verify the avatar is visible
