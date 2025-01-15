@@ -1,5 +1,6 @@
 import { test } from '../fixtures/fixture';
 import { USERS } from '../fixtures/testData/userCredentials.json';
+import path from 'path';
 
 test.describe('UI Tests', () => {
     test.beforeEach(async ({ loginPage }) => {
@@ -40,8 +41,9 @@ test.describe('UI Tests', () => {
         await loginPage.login(USERS.user3.email,USERS.user3.password);
         dashboardPage.verifyAvatarButtonVisible();
         
-        // Provide the path to the image file
-        const imagePath = './e2e/fixtures/testData/images/playwright-logo.jpg';
+         // Provide the path to the image file
+         // const imagePath = path.resolve(__dirname, '../fixtures/testData/images/playwright-logo.jpg');
+         const imagePath = './/e2e//fixtures//testData//images//playwright-logo.jpg';
 
         // Create a New Document
         await dashboardPage.createNewV3Document();
