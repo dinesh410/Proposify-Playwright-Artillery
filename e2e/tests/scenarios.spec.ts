@@ -1,13 +1,17 @@
 import { test } from '../fixtures/fixture';
+import { USERS } from '../fixtures/testData/userCredentials.json';
 import path from 'path';
 
 test.describe('UI Tests', () => {
     test.beforeEach(async ({ loginPage }) => {
         await loginPage.navigate();
-        await loginPage.login('fe.testing+147@proposify.com', 'ufh_jkc3ktw1QTN3ajh');
     });
 
-    test('should successfully reorder the rows of a table', async ({ dashboardPage, documentEditorPage, templatePage }) => {
+    test('should successfully reorder the rows of a table', async ({ loginPage, dashboardPage, documentEditorPage, templatePage }) => {
+        // TODO: Add login in beforeEach hook. Tests are flaky when adding this in beforeEach hook.
+        await loginPage.login(USERS.user2.email,USERS.user2.password);
+        dashboardPage.verifyAvatarButtonVisible();
+
         const addedText = 'This is a test text';
 
         // Create a New Document
@@ -32,7 +36,11 @@ test.describe('UI Tests', () => {
         await documentEditorPage.verifyTableRowOrder(2, 1, addedText);
     });
 
-    test('should successfully resize an image', async ({ dashboardPage, documentEditorPage, templatePage }) => {
+    test('should successfully resize an image', async ({ loginPage, dashboardPage, documentEditorPage, templatePage }) => {
+        // TODO: Add login in beforeEach hook. Tests are flaky when adding this in beforeEach hook.
+        await loginPage.login(USERS.user3.email,USERS.user3.password);
+        dashboardPage.verifyAvatarButtonVisible();
+        
         // Provide the path to the image file
         const imagePath = path.resolve(__dirname, '../fixtures/testData/images/playwright-logo.jpg');
 

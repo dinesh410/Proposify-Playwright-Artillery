@@ -1,10 +1,10 @@
-name: Playwright and Artillery Tests
+name: Artillery with Playwrighyt
 
 on:
   push:
-    branches: [  ]
+    branches: [ main ]
   pull_request:
-    branches: [  ]
+    branches: [ main ]
 
 jobs:
   test:
