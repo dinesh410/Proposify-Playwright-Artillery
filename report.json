@@ -1,0 +1,48 @@
+{
+  "aggregate": {
+    "counters": {
+      "vusers.created_by_name.0": 1,
+      "vusers.created": 1,
+      "errors.events.emit is not a function": 1,
+      "vusers.failed": 1
+    },
+    "rates": {},
+    "firstCounterAt": 1736912905755,
+    "lastCounterAt": 1736912938554,
+    "firstMetricAt": 1736912905755,
+    "lastMetricAt": 1736912938554,
+    "period": 1736912930000,
+    "summaries": {},
+    "histograms": {}
+  },
+  "intermediate": [
+    {
+      "counters": {
+        "vusers.created_by_name.0": 1,
+        "vusers.created": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1736912905755,
+      "lastCounterAt": 1736912905755,
+      "firstMetricAt": 1736912905755,
+      "lastMetricAt": 1736912905755,
+      "period": "1736912900000",
+      "summaries": {},
+      "histograms": {}
+    },
+    {
+      "counters": {
+        "errors.events.emit is not a function": 1,
+        "vusers.failed": 1
+      },
+      "rates": {},
+      "firstCounterAt": 1736912938554,
+      "lastCounterAt": 1736912938554,
+      "firstMetricAt": 1736912938554,
+      "lastMetricAt": 1736912938554,
+      "period": "1736912930000",
+      "summaries": {},
+      "histograms": {}
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+config:
+  target: "https://app.proposify.net"
+  engines:
+    playwright: {}
+  phases:
+    # 1 Gradually increase the virtual user 1 to 2 over 5 minutes
+    - name: Test Phase
+      duration: 10
+      arrivalCount: 1
+    # 1 Gradually increase the virtual user 1 to 2 over 5 minutes
+    #- name: Gradually increase the virtual user 1 to 2 over 5 minutes
+    #  duration: 300
+    #  rampTo: 2
+    # 2 Maintains steady load of 2 virtual users for 2 minutes
+    #- name: Maintains steady load of 2 virtual users for 2 minutes
+    #  duration: 120
+    #  arrivalCount: 6
+  processor: "./artillery-playwright-preprocessor.ts"
+scenarios:
+   - engine: playwright
+     testFunction: runPlaywrightTests
